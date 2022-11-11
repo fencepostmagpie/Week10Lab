@@ -22,6 +22,7 @@ public class AdminFilter implements Filter {
     
 
 
+    @Override
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
@@ -36,7 +37,7 @@ public class AdminFilter implements Filter {
             return;
         }
         
-        if (roleID == 1) {
+        else if (roleID == 1) {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.sendRedirect("admin");
             return;
